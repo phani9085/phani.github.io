@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Examination</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+/* Global Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button {
+    padding: 12px 24px;
+    background-color: #0062ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #004bc5;
+}
+
+a {
+    color: #0062ff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#loginForm, #signupForm {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+#signupForm {
+    display: none; /* Hide signup form by default */
+}
+
+#navbar {
+    background-color: #00444d;
+    padding: 5px 5px;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-top: 0px;
+    width:100%;
+}
+
+#navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#navbar ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+#navbar ul li:last-child {
+    margin-right: 0;
+}
+
+#navbar ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#navbar ul li a:hover {
+    color: aqua;
+}
+
+.logo a {
+    color: #fff;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.logo a:hover {
+    text-decoration: none;
+}
+
+
+    </style>
+</head>
+
+<body>
+<div class="container">
+    
+    <div id="loginForm">
+        <img src="bg.jpg" style="padding: 1%;width: 99.5%;">
+        <h2>E-Examination</h2>
+        <div class="form-group">
+            <label for="loginUsername">Username:</label>
+            <input type="text" id="loginUsername" name="loginUsername" required>
+        </div>
+        <div class="form-group">
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" name="loginPassword" required>
+        </div>
+        <div class="form-group">
+            <button onclick="login()">Login</button>
+        </div>
+        <p>Don't have an account? <a href="#" onclick="switchForm()">Signup</a></p>
+    </div>
+    <div id="signupForm" style="display: none;">
+        <h2>Signup</h2>
+        <div class="form-group">
+            <label for="signupFullname">Full Name:</label>
+            <input type="text" id="signupFullname" name="signupFullname" required>
+        </div>
+        <div class="form-group">
+            <label for="signupUsername">Username:</label>
+            <input type="text" id="signupUsername" name="signupUsername" required>
+        </div>
+        <div class="form-group">
+            <label for="signupPassword">Password:</label>
+            <input type="password" id="signupPassword" name="signupPassword" required>
+        </div>
+        <div class="form-group">
+            <label for="signupCollege">College Name:</label>
+            <input type="text" id="signupCollege" name="signupCollege" required>
+        </div>
+        <div class="form-group">
+            <label for="signupSpecialization">Qualification:</label>
+            <select id="signupSpecialization" name="signupSpecialization" required>
+                <option value="UG">UG</option>
+                <option value="PG">PG</option>
+                <option value="MS">MS</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="signupBranch">Branch:</label>
+            <select id="signupBranch" name="signupBranch" required>
+                <option value="IT">Information Technology</option>
+                <option value="CS">Computer Science</option>
+                <option value="ECE">Electronics and Communication</option>
+                <option value="EEE">Electrical and Electronics Engineering</option>
+                <option value="civil">Civil Engineering</option>
+                <option value="Mech">Mechanical Engineering</option>
+                <option value="CS">Cyber Security</option>
+                <option value="AIML">Artificial Intillegence and Mechine Learning</option>
+                <option value="DS">Data Science</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="signupDOB">Date of Birth:</label>
+            <input type="date" id="signupDOB" name="signupDOB" required>
+        </div>
+        <div class="form-group">
+            <button onclick="signup()">Signup</button>
+        </div>
+        <p>Already have an account? <a href="#" onclick="switchForm()">Login</a></p>
+    </div>
+    <div id="navbar" style="display: none;">
+        <nav>
+            <div class="logo"><a href="#">Hello <span id="usernameDisplay"></span></a></div>
+            <ul>
+                <li><a href="profile.php">Profile</a></li>
+                <li><a href="notifications.html">Notifications</a></li>
+                <li><a href="syllabus.html">Syllabus</a></li>
+                <li><a href="result.php">Dashboard</a></li>
+                <li><a href="mocktest.php">Assignment</a></li>
+                <li><a href="dashboard.php" onclick="logout()">Logout</a></li>
+            </ul>
+            
+            <img src="bg.jpg" style="padding: 1%;width: 99.5%;">
+        </nav>
+    </div>
+</div>
+
+<script>
+    function switchForm() {
+        var loginForm = document.getElementById("loginForm");
+        var signupForm = document.getElementById("signupForm");
+        if (loginForm.style.display === "none") {
+            loginForm.style.display = "block";
+            signupForm.style.display = "none";
+        } else {
+            loginForm.style.display = "none";
+            signupForm.style.display = "block";
+        }
+    }
+
+    function login() {
+        var username = document.getElementById("loginUsername").value;
+        var password = document.getElementById("loginPassword").value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "login.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    var userData = JSON.parse(xhr.responseText);
+                    displayUser(userData);
+                } else {
+                    alert("Login failed: " + xhr.responseText);
+                }
+            }
+        };
+        xhr.send("username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password));
+    }
+
+    function signup() {
+        var fullname = document.getElementById("signupFullname").value;
+        var username = document.getElementById("signupUsername").value;
+        var password = document.getElementById("signupPassword").value;
+        var college = document.getElementById("signupCollege").value;
+        var branch = document.getElementById("signupBranch").value;
+        var specialization = document.getElementById("signupSpecialization").value;
+        var dob = document.getElementById("signupDOB").value;
+
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "signup.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    alert("Signup successful!");
+                    switchForm(); // Switch to login form after successful signup
+                } else {
+                    alert("Signup failed: " + xhr.responseText);
+                }
+            }
+        };
+        xhr.send("fullname=" + encodeURIComponent(fullname) + "&username=" + encodeURIComponent(username) + "&password=" + encodeURIComponent(password) + "&college=" + encodeURIComponent(college) + "&branch=" + encodeURIComponent(branch) + "&specialization=" + encodeURIComponent(specialization) + "&dob=" + encodeURIComponent(dob));
+    }
+
+    function displayUser(userData) {
+        document.getElementById("loginForm").style.display = "none";
+        document.getElementById("signupForm").style.display = "none"; // Hide the signup form if it's displayed
+        document.getElementById("navbar").style.display = "block"; // Show the navigation bar
+        document.getElementById("usernameDisplay").textContent = userData.username; // Update username in navbar
+
+        // Update profile information
+        var profileDetails = "Full Name: " + userData.fullname + "<br>" +
+            "College: " + userData.college + "<br>" +
+            "Branch: " + userData.branch + "<br>" +
+            "Specialization: " + userData.specialization + "<br>" +
+            "Date of Birth: " + userData.dob;
+        document.getElementById("profileDetails").innerHTML = profileDetails;
+        document.body.classList.add('logged-in');
+    }
+
+    function logout() {
+        // Your logout function logic here
+        // For example, redirect to logout.php or clear session
+    }
+</script>
+</body>
+</html>

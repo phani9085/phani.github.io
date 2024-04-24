@@ -1,0 +1,261 @@
+*{
+    text-decoration: none;
+}
+.navbar{
+    background:#4043f0;font-family:calibri;padding-right:15px;padding-left:15px;
+}
+.navdiv{
+    display:flex;align-items:center;justify-content: space-between;
+}
+.logo a{
+    font-size: 35px;font-weight: 600;color:white;
+}
+li{
+    list-style: none;display:inline-block;
+}
+li a{
+    color:white;font-size: 18px;font-weight:bold ;margin-right: 25px;
+}
+button{
+    background-color: rgb(179, 4, 4); margin-left: 10px;border-radius: 10px;padding: 10px;width:90px;
+}
+button a{
+    color: white;font-weight: bold;font-size:15px;
+}
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 10px;
+    border: 1px solid black;
+    display: inline-block;
+}
+.dropbtn {
+  background-color:#4043f0;
+  color: white;
+  padding: 18px;
+  font-size: 16px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #4043f0;}
+
+
+body {
+    background: #f5f5f5;
+    margin-top: 20px;
+}
+
+.ui-w-80 {
+    width : 80px !important;
+    height: auto;
+}
+
+.btn-default {
+    border-color: rgba(24, 28, 33, 0.1);
+    background  : rgba(0, 0, 0, 0);
+    color       : #4E5155;
+}
+
+label.btn {
+    margin-bottom: 0;
+}
+
+.btn-outline-primary {
+    border-color: #26B4FF;
+    background  : transparent;
+    color       : #26B4FF;
+}
+
+.btn {
+    cursor: pointer;
+}
+
+.text-light {
+    color: #babbbc !important;
+}
+
+.btn-facebook {
+    border-color: rgba(0, 0, 0, 0);
+    background  : #3B5998;
+    color       : #fff;
+}
+
+.btn-instagram {
+    border-color: rgba(0, 0, 0, 0);
+    background  : #000;
+    color       : #fff;
+}
+
+.card {
+    background-clip: padding-box;
+    box-shadow     : 0 1px 4px rgba(24, 28, 33, 0.012);
+}
+
+.row-bordered {
+    overflow: hidden;
+}
+
+.account-settings-fileinput {
+    position  : absolute;
+    visibility: hidden;
+    width     : 1px;
+    height    : 1px;
+    opacity   : 0;
+}
+
+.account-settings-links .list-group-item.active {
+    font-weight: bold !important;
+}
+
+html:not(.dark-style) .account-settings-links .list-group-item.active {
+    background: transparent !important;
+}
+
+.account-settings-multiselect~.select2-container {
+    width: 100% !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+
+.material-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+
+.material-style .account-settings-links .list-group-item.active {
+    color: #4e5155 !important;
+}
+
+.dark-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+.dark-style .account-settings-links .list-group-item.active {
+    color: #fff !important;
+}
+
+.light-style .account-settings-links .list-group-item.active {
+    color: #4E5155 !important;
+}
+
+.light-style .account-settings-links .list-group-item {
+    padding     : 0.85rem 1.5rem;
+    border-color: rgba(24, 28, 33, 0.03) !important;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.container{
+    position: relative;
+    width: 1200px;
+    height: 300px;
+    margin: 240px auto;
+}
+.container .box{
+    position: relative;
+    width: calc(400px -30px);
+    height: calc(300px - 30px);
+    background: #000;
+    float: left;
+    margin: 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.container .box .icon{
+    position: absolute;
+    top: 0;
+    Left: 0;
+    width: 100%;
+    height: 100%;
+    background: #f00;
+    transition: .5s;
+    z-index: 1;
+}
+.container .box:hover .icon{
+    top: 20px;
+    Left: calc(50% - 40px);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.container .box .icon .fa{
+    position: absolute;
+    top: 50%;
+    Left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 80px;
+    transition: 0.5s;
+    color: #fff;
+}
+.container .box:hover .icon .fa{
+    font-size: 40px;
+}
+.container .box .content{
+    position: absolute;
+    top: 100%;
+    height: calc(100% - 100px);
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: 0.5s;
+    opacity: 0;
+}
+.container .box:hover .content{
+    top: 100px;
+    opacity: 1;
+}
+.container .box .content h3{ 
+    margin: 0 0 10px;
+    padding: 0;
+    color: #fff;
+    font-size: 24px;
+}
+.container .box .content p{
+    margin: 0;
+    padding: 0;
+    color: #fff;
+}
+.container .box:nth-child(1) .icon
+{
+background: pink;
+}
+.container .box:nth-child(1)
+{
+background: orange;
+}
